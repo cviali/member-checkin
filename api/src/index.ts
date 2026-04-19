@@ -17,7 +17,7 @@ const app = new Hono<Env>();
 app.use(
   "/*",
   cors({
-    origin: ["http://localhost:3000", "http://localhost:3001", "https://vlocityarena.com"],
+    origin: ["http://localhost:3000", "http://localhost:3001", "https://checkin.vlocityarena.com"],
     allowHeaders: ["Content-Type", "Authorization"],
     allowMethods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
     maxAge: 86400,

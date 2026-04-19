@@ -1,6 +1,6 @@
 // wrangler.jsonc — Frontend (OpenNext Cloudflare adapter)
 {
-  "name": "vlocity-arena",
+  "name": "member-checkin",
   "main": ".open-next/worker.js",
   "compatibility_date": "2025-12-01",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
@@ -11,7 +11,13 @@
   "services": [
     {
       "binding": "API",
-      "service": "vlocity-arena-api"
+      "service": "member-checkin-api"
+    }
+  ],
+  "routes": [
+    {
+      "pattern": "checkin.vlocityarena.com",
+      "custom_domain": true
     }
   ]
 }

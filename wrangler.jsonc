@@ -1,0 +1,17 @@
+// wrangler.jsonc — Frontend (OpenNext Cloudflare adapter)
+{
+  "name": "vlocity-arena",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-12-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": ".open-next/assets"
+  },
+  "services": [
+    {
+      "binding": "API",
+      "service": "vlocity-arena-api"
+    }
+  ]
+}

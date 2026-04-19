@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+.open-next/
+
+# Next.js
+.next/
+out/
+
+# Environment
+.env*.local
+!.env.local.example
+
+# Wrangler
+.wrangler/
+.dev.vars
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+*.tsbuildinfo
+
+# Drizzle
+api/migrations/meta/

@@ -1,0 +1,22 @@
+// wrangler.jsonc — API (Cloudflare Worker)
+{
+	"name": "vlocity-arena-api",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-12-01",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "vlocity-arena-db",
+			"database_id": "e2e3598b-cff7-4d90-bd38-d0244a1a139e"
+		}
+	],
+	"r2_buckets": [
+		{
+			"binding": "BUCKET",
+			"bucket_name": "vlocity-arena-images"
+		}
+	]
+}

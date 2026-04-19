@@ -9,14 +9,14 @@
 	"d1_databases": [
 		{
 			"binding": "DB",
-			"database_name": "vlocity-arena-db",
-			"database_id": "e2e3598b-cff7-4d90-bd38-d0244a1a139e"
+			"database_name": "member-checkin",
+			"database_id": "c490c14a-e61a-462e-889d-72e4a392d0f3"
 		}
 	],
 	"r2_buckets": [
 		{
 			"binding": "BUCKET",
-			"bucket_name": "vlocity-arena-images"
+			"bucket_name": "member-checkin-images"
 		}
 	],
 	"routes": [

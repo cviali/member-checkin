@@ -64,13 +64,23 @@ auth.post("/customer/login", async (c) => {
     return c.json({ error: "Phone number and date of birth are required" }, 400);
   }
 
+  // Normalize phone: +62xxx → 0xxx, 8xx → 08xx
+  let normalizedPhone = phoneNumber.replace(/\s+/g, "");
+  if (normalizedPhone.startsWith("+62")) {
+    normalizedPhone = "0" + normalizedPhone.slice(3);
+  } else if (normalizedPhone.startsWith("62") && normalizedPhone.length > 10) {
+    normalizedPhone = "0" + normalizedPhone.slice(2);
+  } else if (/^[1-9]/.test(normalizedPhone)) {
+    normalizedPhone = "0" + normalizedPhone;
+  }
+
   const db = getDb(c.env.DB);
   const [user] = await db
     .select()
     .from(users)
     .where(
       and(
-        eq(users.phoneNumber, phoneNumber),
+        eq(users.phoneNumber, normalizedPhone),
         eq(users.role, "customer"),
         isNull(users.deletedAt)
       )

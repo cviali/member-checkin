@@ -38,7 +38,7 @@ rewardsRoute.get("/", async (c) => {
 // Serve reward image from R2
 rewardsRoute.get("/image/:name", async (c) => {
   const name = c.req.param("name");
-  const object = await c.env.BUCKET.get(name);
+  const object = await c.env.BUCKET.get(`rewards/${name}`);
 
   if (!object) {
     return c.json({ error: "Image not found" }, 404);
@@ -63,11 +63,11 @@ rewardsRoute.post("/upload", authMiddleware, requireRole("admin"), async (c) => 
   const ext = file.name.split(".").pop() || "jpg";
   const filename = `reward-${Date.now()}.${ext}`;
 
-  await c.env.BUCKET.put(filename, file.stream(), {
+  await c.env.BUCKET.put(`rewards/${filename}`, file.stream(), {
     httpMetadata: { contentType: file.type },
   });
 
-  return c.json({ imageUrl: filename });
+  return c.json({ imageUrl: `/rewards/image/${filename}` });
 });
 
 // Create reward (admin only)

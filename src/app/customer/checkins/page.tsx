@@ -112,12 +112,6 @@ export default function CustomerCheckinsPage() {
                 <span>Points</span>
                 <span>{checkin.pointsEarned} pts</span>
               </div>
-
-              {checkin.status === "rejected" && checkin.rejectionReason && (
-                <div className="mt-2 rounded-md bg-red-50 p-2 text-xs text-red-700 dark:bg-red-900/20 dark:text-red-400">
-                  Reason: {checkin.rejectionReason}
-                </div>
-              )}
             </CardContent>
           </Card>
         );

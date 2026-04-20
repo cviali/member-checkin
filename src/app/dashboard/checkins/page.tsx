@@ -186,6 +186,16 @@ export default function CheckinsPage() {
       cell: ({ row }) => <StatusBadge status={row.original.status} />,
     },
     {
+      accessorKey: "rejectionReason",
+      header: "Reason",
+      cell: ({ row }) =>
+        row.original.status === "rejected" && row.original.rejectionReason ? (
+          <span className="max-w-[200px] truncate text-xs text-muted-foreground">
+            {row.original.rejectionReason}
+          </span>
+        ) : null,
+    },
+    {
       accessorKey: "createdAt",
       header: "Date",
       cell: ({ row }) => formatDateTimeGMT7(row.original.createdAt),

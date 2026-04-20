@@ -84,11 +84,6 @@ export default function CustomerRedemptionsPage() {
                 {formatPoints(r.pointsSpent)} pts
               </span>
             </div>
-            {r.notes && (
-              <div className="mt-2 rounded-md bg-muted p-2 text-xs">
-                Note: {r.notes}
-              </div>
-            )}
           </CardContent>
         </Card>
       ))}

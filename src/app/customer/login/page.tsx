@@ -92,9 +92,6 @@ export default function CustomerLoginPage() {
                 required
                 autoComplete="tel"
               />
-              <p className="text-xs text-muted-foreground">
-                Accepts 0858..., +62858..., or 858...
-              </p>
             </div>
             <div className="space-y-2">
               <Label htmlFor="dob">Date of Birth</Label>
